@@ -1,0 +1,46 @@
+.image_col {
+	position:relative; 
+	height:150px;
+	overflow:hidden; 
+}
+
+.image_col_button {
+	position:absolute;
+	top:50%; 
+	width:100%;
+	height:35px; 
+
+	-ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.dropzone {
+    border: 2px dashed rgba(0, 0, 0, 0.3) !important;
+    background: white;
+}
+
+
+.album_name {
+	height:50px; 
+	line-height:15px; 
+	font-size:12px;
+
+}
+
+.album_col {
+	position:relative; 
+}
+
+.album_checkbox {
+	position:absolute;
+	top:5px;
+	left:0px; 
+}
+
+.album_container {
+	width:100%;
+	height:400px;
+	overflow-y:auto;
+	overflow-x:hidden;    
+}
