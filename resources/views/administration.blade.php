@@ -15,7 +15,7 @@
           </div>
 
           <div class="col-md-8">
-            <h2>Mr. Elpidio Balatbat</h2>
+            <h2>Mr. Elpidio Balatbat </h2>
             <!-- <p class="admin-position lead text-muted text-uppercase m-t-0">Directress</p> -->
             <h3 class="h4 bottom-bar">Background</h3>
             <p>Sir Elpidio Balatbat finished college in the University of the East. He pursued his Masters in Business Administration in Ateneo de Manila University. He was the Vice President of the Administration in Ayala Life, Group of Companies before establishing Falcon Learning Center.</p>
