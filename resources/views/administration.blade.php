@@ -12,20 +12,13 @@
         <div class="row m-b-6 p-b-4">
           <div class="col-md-4">
             <img src="assets/temp/300x350-teal.jpg" class="img-responsive" />
-            <div class="admin-social text-center m-t-3">
-              <a href="#" class="ion-icon ion-social-facebook p-x-3"></a>
-              <a href="#" class="ion-icon ion-social-linkedin p-x-3"></a>
-            </div>
           </div>
 
           <div class="col-md-8">
-            <h2>Pacita R. Balatbat</h2>
-            <p class="admin-position lead text-muted text-uppercase m-t-0">Directress</p>
+            <h2>Mr. Elpidio Balatbat</h2>
+            <!-- <p class="admin-position lead text-muted text-uppercase m-t-0">Directress</p> -->
             <h3 class="h4 bottom-bar">Background</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et vehicula lorem, nec tristique velit. Fusce orci diam, maximus ac purus at, euismod imperdiet lorem. Quisque vestibulum, tellus sed faucibus feugiat, lectus massa consectetur ligula, id consequat magna odio ac nibh. Donec faucibus nisi vitae convallis aliquam. Cras sodales augue ac purus convallis tempor.</p>
-            <ul>
-              <li>Has taught at International School of Manila for 36 years.</li>
-            </ul>
+            <p>Sir Elpidio Balatbat finished college in the University of the East. He pursued his Masters in Business Administration in Ateneo de Manila University. He was the Vice President of the Administration in Ayala Life, Group of Companies before establishing Falcon Learning Center.</p>
           </div>
         </div>
 
@@ -33,42 +26,40 @@
 
         <div class="row m-b-6 p-b-4">
           <div class="col-md-8">
-            <h2>Lorelei B. Aunario</h2>
-            <p class="admin-position lead text-muted text-uppercase m-t-0">Academic Chairperson</p>
+            <h2>Mrs. Pacita Balatbat</h2>
+            <!-- <p class="admin-position lead text-muted text-uppercase m-t-0">Academic Chairperson</p> -->
             <h3 class="h4 bottom-bar">Background</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et vehicula lorem, nec tristique velit. Fusce orci diam, maximus ac purus at, euismod imperdiet lorem. Quisque vestibulum, tellus sed faucibus feugiat, lectus massa consectetur ligula, id consequat magna odio ac nibh. Donec faucibus nisi vitae convallis aliquam. Cras sodales augue ac purus convallis tempor.</p>
-            <ul>
-              <li>Has taught at Ateneo Grade School for 9 years.</li>
-            </ul>
+            <p>Mrs. Pacita Balatbat finished Cum Laude in St. Louis University – Baguio with the course of BS Education. She pursued her Masteral Studies in Language Teaching at the University of the Philippines and Michigan State University, USA. She was a classroom teacher at International School of Manila (ISM) for 36 years. She taught English as a Second Language (ESL) to non-English speaking nationalities.</p>
           </div>
 
           <div class="col-md-4">
             <img src="assets/temp/300x350-teal.jpg" class="img-responsive" />
-            <div class="admin-social text-center m-t-3">
-              <a href="#" class="ion-icon ion-social-facebook p-x-3"></a>
-              <a href="#" class="ion-icon ion-social-linkedin p-x-3"></a>
-            </div>
           </div>
         </div>
 
         <div class="row m-b-6 p-b-4">
           <div class="col-md-4">
             <img src="assets/temp/300x350-teal.jpg" class="img-responsive" />
-            <div class="admin-social text-center m-t-3">
-              <a href="#" class="ion-icon ion-social-facebook p-x-3"></a>
-              <a href="#" class="ion-icon ion-social-linkedin p-x-3"></a>
-            </div>
           </div>
 
           <div class="col-md-8">
-            <h2>Malou B. Deomano</h2>
-            <p class="admin-position lead text-muted text-uppercase m-t-0">Coordinator - Student Affairs</p>
+            <h2>Mrs. Lorelei Balatbat-Aunario</h2>
             <h3 class="h4 bottom-bar">Background</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et vehicula lorem, nec tristique velit. Fusce orci diam, maximus ac purus at, euismod imperdiet lorem. Quisque vestibulum, tellus sed faucibus feugiat, lectus massa consectetur ligula, id consequat magna odio ac nibh. Donec faucibus nisi vitae convallis aliquam. Cras sodales augue ac purus convallis tempor.</p>
-            <ul>
-              <li>MA in Basic Education, Ateneo de Manila University.</li>
-              <li>Bachelor of Science in Economics, Dean's Medalist, U.P. Diliman, Quezon City</li>
-            </ul>
+            <p>Mrs. Lorelei Balatbat – Aunario finished Magna Cum Laude in the University of the Philippines Diliman with the course of BS Early Childhood Education. She continued her Masteral Studies in Child Psychology in Ateneo de Manila University, where she also taught.</p>
+          </div>
+        </div>
+
+
+        <div class="row m-b-6 p-b-4">
+          <div class="col-md-8">
+            <h2>Mrs. Ma. Lucila Balatbat-Deomano</h2>
+            <!-- <p class="admin-position lead text-muted text-uppercase m-t-0">Academic Chairperson</p> -->
+            <h3 class="h4 bottom-bar">Background</h3>
+            <p>Mrs. Malou Balatbat – Deomano finished Dean’s Medalist in the University of the Philippines Dimilan with the course of Bachelor of Science in Economics. She took her MA in Basic Education in Ateneo de Manila University. She was formerly the Branch Manager of Robinson’s Bank, Libis Branch. She was also a Sales Officer for Bank of America Savings Bank. </p>
+          </div>
+
+          <div class="col-md-4">
+            <img src="assets/temp/300x350-teal.jpg" class="img-responsive" />
           </div>
         </div>
 
