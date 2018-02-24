@@ -28,11 +28,23 @@
 
 
         <div class="row">
-            <div class="col-xs-12 col-sm-6 text-left">
+
+            <div class="col-xs-12 text-center hidden visible-xs">
+                <ul class="list-inline">
+                    <li><a href="{{ url('/mission-vision') }}">About Us</a></li>
+                    <li><a href="{{ route('school.level', ['level' => 'pre-school']) }}">Levels</a></li>
+                    <li><a href="{{ route('gallery.all') }}">Gallery</a></li>
+                    <li><a href="{{ route('article.newsannoucements') }}">News &amp; Events</a></li>
+                    <li><a href="{{ route('contact.form') }}">Contact Us</a></li>
+                </ul>
                 <p>© Copyright 2017 Falcon School</p>
             </div>
 
-            <div class="col-xs-12 col-sm-6 text-right">
+            <div class="col-xs-12 col-sm-4 text-left hidden visible-sm visible-md visible-lg visible-xl">
+                <p>© Copyright 2017 Falcon School</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 text-right hidden visible-sm visible-md visible-lg visible-xl">
                 <ul class="list-inline pull-right">
                     <li><a href="{{ url('/mission-vision') }}">About Us</a></li>
                     <li><a href="{{ route('school.level', ['level' => 'pre-school']) }}">Levels</a></li>

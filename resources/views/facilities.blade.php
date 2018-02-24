@@ -15,9 +15,9 @@
           <div class="row my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
             
             @foreach($gal_facilities as $facilities)
-              <div class="col-sm-12 col-md-4 m-b-2">
+              <div class="col-xs-6 col-md-4 col-sm-3 m-b-2">
                 <a href="{{ route('facilities.details', ['id' => $facilities->id]) }}">
-                  <div class="w-100" style="height:180px; overflow:hidden;">
+                  <div class="w-100 my-gallery-item">
                     <img src="{{  asset('uploads/gallery/'.$facilities->file_filename) }}" class="img-responsive w-100"/>
                   </div>
                 </a>

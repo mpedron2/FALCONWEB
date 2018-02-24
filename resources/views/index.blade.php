@@ -96,7 +96,7 @@
 		            <div class="container-fluid">
 
 			            <div class="row">
-			                <div class="col-sm-6 col-md-3 col-gap">
+			                <div class="col-xs-12 col-sm-6 col-lg-3 col-gap">
 			                	<div class="panel panel-default">
 				                    <div class="panel-heading">
 				                    	<h5 class="panel-title text-center text-uppercase">Pre-School</h5>
@@ -111,7 +111,7 @@
 			                </div>
 
 			              
-			                <div class="col-sm-6 col-md-3 col-gap">
+			                <div class="col-xs-12 col-sm-6 col-lg-3 col-gap">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h5 class="panel-title text-center text-uppercase">Grade School</h5>
@@ -125,7 +125,7 @@
 								</div>
 			                </div>
 
-			                <div class="col-sm-6 col-md-3 col-gap">
+			                <div class="col-xs-12 col-sm-6 col-lg-3 col-gap">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 									  <h5 class="panel-title text-center text-uppercase">Junior High School</h5>
@@ -139,7 +139,7 @@
 								</div>
 			                </div>
 
-			                <div class="col-sm-6 col-md-3 col-gap">
+			                <div class="col-xs-12 col-sm-6 col-lg-3 col-gap">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h5 class="panel-title text-center text-uppercase">Senior High School</h5>
@@ -166,16 +166,35 @@
 	<section id="latest-news" class="container">
 		<div class="row">
 
-			<div class="col-md-3 col-sm-12">
-				<h4 class="bottom-bar">The Falcon Gazette</h4>
-				<a href="assets/uploads/falcon-gazette-sy-2015-2016.pdf" target="_blank"><img src="assets/temp/falcon-gazette-sy-2015-2016.jpg" alt="falcon-gazette-sy-2015-2016" title="Falcon Gazette SY 2015-2016" class="w-100"></a>
-			</div>
-
-			<div class="col-md-9 col-sm-12">
+			<div class="col-xs-12 col-sm-6 col-md-9">
 				<div class="row">
+					@if($upcoming_events)
+						<div class="col-xs-12 col-md-6 hidden visible-md visible-lg visible-xl">
+							<h4 class="bottom-bar">Upcoming Events</h4>
+
+							<ul class="list-unstyled list-events">
+								@foreach($upcoming_events as $events)
+								    <li>
+								    	<div class="posting-date pull-left text-center">
+									    	<span class="h4">{{ date('d', strtotime($events->article_eventdate1)) }}</span>
+									    	{{ date('M', strtotime($events->article_eventdate1)) }}
+								    	</div>
+
+										<div class="event-details">
+											<h5 class="event-title">{{ $events->article_title }}</h5>
+											<p class="event-desc">{{ str_limit(strip_tags($events->article_content), 40) }}</p>
+										</div>
+								    </li>
+								@endforeach
+							</ul>
+
+							<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+
+						</div>
+					@endif
 
 					@if($latest_news)
-						<div class="col-md-6 col-sm-12">
+						<div class="col-xs-12 col-md-6">
 							<h4 class="bottom-bar">Latest News</h4>
 
 							<ul class="list-unstyled list-news">
@@ -192,9 +211,8 @@
 						</div>
 					@endif
 
-
 					@if($upcoming_events)
-						<div class="col-md-6 col-sm-12">
+						<div class="col-xs-12 col-md-6 hidden visible-xs visible-sm">
 							<h4 class="bottom-bar">Upcoming Events</h4>
 
 							<ul class="list-unstyled list-events">
@@ -218,6 +236,11 @@
 						</div>
 					@endif
 				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				<h4 class="bottom-bar">The Falcon Gazette</h4>
+				<a href="assets/uploads/falcon-gazette-sy-2015-2016.pdf" target="_blank"><img src="assets/temp/falcon-gazette-sy-2015-2016.jpg" alt="falcon-gazette-sy-2015-2016" title="Falcon Gazette SY 2015-2016" class="w-100"></a>
 			</div>
 
 		</div>

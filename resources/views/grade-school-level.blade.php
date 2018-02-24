@@ -44,13 +44,13 @@
           
           <!-- FACULTY -->
           <div class="tab-pane fade" id="tabFaculty">
-            <figure>
-              <!-- <img src="{{ asset('assets/img/grades-1-to-3-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/> -->
+            <figure class="m-b-5">
+              <img src="{{ asset('assets/img/grades-1-to-3-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/>
               <figcaption>From left to right, top to bottom: Ru, Levi, Jonas, Lyn, Glen, Nadia, Juna, Roselle, Kath, Jan Lorei, Rein, Joan, Marielle, Murphy, Gemma, Paz, Lai, Bing, Fe, Eunice</figcaption>
             </figure>
 
-            <figure>
-              <!-- <img src="{{ asset('assets/img/grades-4-to-6-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/> -->
+            <figure class="m-b-5">
+              <img src="{{ asset('assets/img/grades-4-to-6-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/>
               <figcaption>From left to right, top to bottom: Ru, Brodley, Ronnel, James, Dan, Glen, Gemma, Donna, Levi, Kath, Fe, Jovi, Joy, Jen, Marlyn, Marielle, Paz, Lai, Sharmaine, Harriete, Nida</figcaption>
             </figure>
           </div>

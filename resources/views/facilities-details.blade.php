@@ -26,7 +26,7 @@
 
               @foreach($facilities_gallery_images as $facilities_images)
                 <?php $image_dimension = $facilities_images->file_width.'x'.$facilities_images->file_height  ?>
-                <figure class="col-sm-12 col-md-4 m-y-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" >
+                <figure class="col-xs-6 col-md-4 col-sm-3 m-y-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" >
                   <a href="{{  asset('uploads/gallery/'.$facilities_images->file_filename) }}" itemprop="contentUrl" data-size="{{ $image_dimension }}" class="pswp-thumb w-100 four-three" style="background-image:url('{{  asset('uploads/gallery/'.$facilities_images->file_filename) }}');">
                     <div class="w-100 h-100" itemprop="thumbnail" data-src="{{  asset('uploads/gallery/'.$facilities_images->file_filename) }}"></div>
                   </a>

@@ -18,7 +18,7 @@
           	<?= $article_details->article_content ?>
           </div>
 
-          <a href="news-and-announcements.php" class="btn btn-sm btn-info m-y-6">Back to News &amp; Announcements Listing</a>
+          <a href="{{ route('article.newsannoucements') }}" class="btn btn-sm btn-info m-y-6">Back to News &amp; Announcements Listing</a>
         </div>
         @include('partials.sidebar-articles')
       </div>

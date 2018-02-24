@@ -57,7 +57,7 @@
           
           <!-- FACULTY -->
           <div class="tab-pane fade" id="tabFaculty">
-            <figure>
+            <figure class="m-b-5">
               <img src="{{ asset('assets/img/sr-high-school-faculty.jpg')}}" class="img-responsive w-100 m-b-3"/>
               <figcaption>From left to right, top to bottom: Jerome, Art, Karl, MJ, Yna, Daisy, Ime, Alma</figcaption>
             </figure>

@@ -32,8 +32,8 @@
           
           <!-- FACULTY -->
           <div class="tab-pane fade" id="tabFaculty">
-            <figure>
-              <!-- <img src="{{ asset('assets/img/jr-high-school-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/> -->
+            <figure class="m-b-5">
+              <img src="{{ asset('assets/img/jr-high-school-faculty.jpg') }}" class="img-responsive w-100 m-b-3"/>
               <figcaption>From left to right, top to bottom: Dahn, Karl, Roda, MJ, Khen, Rechelle, Prince, Jerome, Wilson, Derick, Diane C, Darlleah, Jah, Dawn, Ruth, Van, Diane T., Karen, Daisy, Lai, Paz, Malu, Ime</figcaption>
             </figure>
           </div>

@@ -38,8 +38,9 @@
                       <h3 class="panel-title">1997</h3>
                   </div>
                   <div class="panel-body">
-                      Establishment of Falcon Learning Center
-
+                    <ul>
+                      <li>Establishment of Falcon Learning Center</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -51,7 +52,9 @@
                       <h3 class="panel-title">2001</h3>
                   </div>
                   <div class="panel-body">
-                      First Batch of Grade 1 Students
+                    <ul>
+                      <li>First Batch of Grade 1 Students</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -63,7 +66,9 @@
                       <h3 class="panel-title">2003</h3>
                   </div>
                   <div class="panel-body">
-                      Development of the Falcon School Accounting System by T. Imelda Mayo
+                    <ul>
+                      <li>Development of the Falcon School Accounting System by T. Imelda Mayo</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -75,7 +80,9 @@
                       <h3 class="panel-title">2004</h3>
                   </div>
                   <div class="panel-body">
-                      Full-operation of the Accounting System
+                    <ul>
+                      <li>Full-operation of the Accounting System</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -87,7 +94,9 @@
                       <h3 class="panel-title">2007</h3>
                   </div>
                   <div class="panel-body">
-                      Participation of all Levels in MTAP
+                    <ul>
+                      <li>Participation of all Levels in MTAP</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -99,7 +108,9 @@
                       <h3 class="panel-title">2008</h3>
                   </div>
                   <div class="panel-body">
-                      Construction of the High School Building
+                    <ul>
+                      <li>Construction of the High School Building</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -111,15 +122,10 @@
                       <h3 class="panel-title">2009</h3>
                   </div>
                   <div class="panel-body">
-                      Awarded the Garbology Master "Zero Basura Olympics" Award Used as an Evacuation Center for Ondoy Victims
-                  </div>
-              </article>
-              <!-- /Panel -->
-
-              <article class="panel panel-default panel-outline">
-                  <div class="panel-heading icon"></div>
-                  <div class="panel-body">
-                      <strong>2009</strong> Used as an Evacuation Center for Ondoy Victims.
+                    <ul>
+                      <li>Awarded the Garbology Master "Zero Basura Olympics" Award</li>
+                      <li>Used as an Evacuation Center for Ondoy Victims</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -131,7 +137,9 @@
                       <h3 class="panel-title">2010</h3>
                   </div>
                   <div class="panel-body">
-                      Falcon Learning Center (FLC) to Falcon School (FS)
+                    <ul>
+                      <li>Falcon Learning Center (FLC) to Falcon School (FS)</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -143,7 +151,9 @@
                       <h3 class="panel-title">2012</h3>
                   </div>
                   <div class="panel-body">
-                      Blessing of Falcon School's Gym
+                    <ul>
+                      <li>Blessing of Falcon School's Gym</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -155,11 +165,13 @@
                       <h3 class="panel-title">2013</h3>
                   </div>
                   <div class="panel-body">
-                      Joined local and international competitions such as:<br>
-                      - Flash Fiction Writing Contest<br>
-                      - Ateneo Sipnayan Math Challenge<br>
-                      - Journalism Press Conferences<br>
-                      - MTAP
+                    Joined local and international competitions such as:
+                    <ul>
+                      <li>Flash Fiction Writing Contest</li>
+                      <li>Ateneo Sipnayan Math Challenge</li>
+                      <li>Journalism Press Conferences</li>
+                      <li>MTAP</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -171,16 +183,11 @@
                       <h3 class="panel-title">2015</h3>
                   </div>
                   <div class="panel-body">
-                      Awarded the Scholastic's Highest Lexile Growth (Grade School)<br>
-                      Given Citation from MTG for School Support and Cooperation in Training of Finest Mathematician
-                  </div>
-              </article>
-              <!-- /Panel -->
-
-              <article class="panel panel-default panel-outline">
-                  <div class="panel-heading icon"></div>
-                  <div class="panel-body">
-                      <strong>2015</strong> Construction of the SHS Building
+                    <ul>
+                      <li>Awarded the Scholastic's Highest Lexile Growth (Grade School)</li>
+                      <li>Given Citation from MTG for School Support and Cooperation in Training of Finest Mathematician</li>
+                      <li>Construction of the SHS Building</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -192,7 +199,9 @@
                       <h3 class="panel-title">2016</h3>
                   </div>
                   <div class="panel-body">
-                      Offering of the Senior High School Program
+                    <ul>
+                      <li>Offering of the Senior High School Program</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->
@@ -201,10 +210,13 @@
               <article class="panel panel-primary">
                   <div class="panel-heading icon"></div>
                   <div class="panel-heading">
-                      <h3 class="panel-title">Present</h3>
+                      <h3 class="panel-title">2017</h3>
                   </div>
                   <div class="panel-body">
-                      Full implementation of the SHS Program Establishment of New Canteen (SHSB)
+                    <ul>
+                      <li>Full implementation of the SHS Program</li>
+                      <li>Establishment of New Canteen (SHSB)</li>
+                    </ul>
                   </div>
               </article>
               <!-- /Panel -->

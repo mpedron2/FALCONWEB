@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top p-b-2">
 
   <!-- Mini Header -->
-  <div class="mini-header text-white p-y-2">
+  <div class="mini-header text-white p-y-2 hidden visible-sm visible-md visible-lg visible-xl">
     <div class="container">
       
       <ul class="pull-left list-inline text-uppercase m-b-0 contact-left">
