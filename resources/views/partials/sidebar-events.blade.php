@@ -17,6 +17,10 @@
 			@endforeach
 		</ul>
 
-		<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+		@if(count($upcoming_events) == 0)
+			<p>There are no upcoming events in the future. Please check back again later.</p>
+		@else
+			<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+		@endif
 	</div>
 @endif

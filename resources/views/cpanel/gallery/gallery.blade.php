@@ -24,7 +24,7 @@
         <div class="box-header">
           <!-- <h3 class="box-title">Hover Data Table</h3> -->
           <div class="pull-right">
-            <a href="#" class="btn btn-primary add_album_modal">Add New Album</a>
+            <a href="#" class="btn btn-primary add_album_modal">Create a New Album</a>
           </div>
           <div class="cleafix"></div>
         </div>

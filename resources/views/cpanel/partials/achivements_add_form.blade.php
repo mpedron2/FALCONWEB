@@ -6,7 +6,7 @@
         <form id="form_add_achivements" method="post">
             <div class="modal-header box-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add New Achivements</h4>
+                <h4 class="modal-title">New Achievement</h4>
             </div>
 
             <div class="modal-body">
@@ -25,19 +25,19 @@
                 
                 <div class="form-group">
                   <label for="ach_title">Title <span class="text-red">*</span></label>
-                  <input type="text" class="form-control" id="ach_title" name="ach_title" value="" placeholder="Enter the Achivement Title Here">
+                  <input type="text" class="form-control" id="ach_title" name="ach_title" value="">
                   <div class="help-block has-error text-center" id="ach_title-error"></div>
                 </div>
 
                 <div class="form-group">
-                  <label for="ach_subtitle">Sub Title</label>
+                  <label for="ach_subtitle">Subtitle</label>
                   <input type="text" class="form-control" id="ach_subtitle" name="ach_subtitle" value="">
                   <div class="help-block has-error text-center" id="ach_subtitle-error"></div>
                 </div>
 
                 
                 <div class="form-group">
-                  <label for="ach_date_awarded">Date Awarded <span class="text-red">*</span></label>
+                  <label for="ach_date_awarded">Year Awarded <span class="text-red">*</span></label>
                   <div class="input-group date">
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
@@ -64,7 +64,7 @@
                   <label>Applicable Levels <span class="text-red">*</span></label><br>
 
                   <div class="m-b-2">
-                    <input type="checkbox" class="all_levels" name="all_levels" value="All">
+                    <input type="checkbox" class="all_levels" name="all_levels" value="uncheck all">
                     <span class="m-l-2">All Levels</span>
                   </div>
 
@@ -134,13 +134,27 @@
       ]
   });
 
+  $('.ach_levels').prop('checked', 'checked'); 
+  $('.all_levels').prop('checked', 'checked'); 
 
   // ALL LEVELS CHECKBOX
   $('.all_levels').change(function(){
-      var checked = !$(this).data('checked');
-      $('.ach_levels').prop('checked', checked);
-      $(this).val(checked ? 'uncheck all' : 'check all' )
-      $(this).data('checked', checked);
+      if($(this).val() == "check all") {
+        $(this).val("uncheck all");
+        $('.ach_levels').prop('checked', 'checked'); 
+      } else {
+        $(this).val("check all");
+        $('.ach_levels').prop('checked', '');
+      }
+
+  });
+
+  $('.ach_levels').change(function() {
+    
+    if($(this).prop('checked') == false) {
+      $('.all_levels').val("check all");
+      $('.all_levels').prop('checked', ''); 
+    }
   });
 
 

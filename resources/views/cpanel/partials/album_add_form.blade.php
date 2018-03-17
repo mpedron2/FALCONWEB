@@ -6,7 +6,7 @@
         <form id="form_add_album" method="post">
             <div class="modal-header box-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add New Album</h4>
+                <h4 class="modal-title">Gallery Album</h4>
             </div>
 
             <div class="modal-body">
@@ -25,7 +25,7 @@
                 
                 <div class="form-group">
                   <label for="ach_title">Album Title <span class="text-red">*</span></label>
-                  <input type="text" class="form-control" id="gal_name" name="gal_name" value="" placeholder="Name of gallery">
+                  <input type="text" class="form-control" id="gal_name" name="gal_name" value="">
                   <div class="help-block has-error text-center" id="gal_name-error"></div>
                 </div>
 
@@ -52,24 +52,26 @@
                   <label>Album Type <span class="text-red">*</span></label><br>
                     <div class="input-group w-100">
                       <div class="m-b-2">
-                        <input type="checkbox" class="gallery_type" name="gallery_type[]" value="gallery">
-                        <span class="m-l-2">Gallery Album</span>
-                      </div>
-
-                      <div class="m-b-2">
-                        <input type="checkbox" class="gallery_type" name="gallery_type[]" value="facilities">
-                        <span class="m-l-2">Facilities Albums</span>
-                      </div>
-
-                      <div class="m-b-2">
                         <input type="checkbox" class="gallery_type" name="gallery_type[]" value="achivements">
-                        <span class="m-l-2">Achivements Album</span>
+                        <span class="m-l-2">Achievement Gallery</span>
                       </div>
 
                       <div class="m-b-2">
                         <input type="checkbox" class="gallery_type" name="gallery_type[]" value="articles">
-                        <span class="m-l-2">Articles Album</span>
+                        <span class="m-l-2">Article Gallery</span>
                       </div>
+
+                      <div class="m-b-2">
+                        <input type="checkbox" class="gallery_type" name="gallery_type[]" value="facilities">
+                        <span class="m-l-2">Facility</span>
+                      </div>
+
+                      <div class="m-b-2">
+                        <input type="checkbox" class="gallery_type" name="gallery_type[]" value="gallery">
+                        <span class="m-l-2">Miscellaneous Gallery</span>
+                      </div>
+
+                      
                     </div>
 
                     <div class="help-block has-error text-center" id="gallery_type-error"></div>

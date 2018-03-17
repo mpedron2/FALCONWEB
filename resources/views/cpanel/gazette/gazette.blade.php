@@ -23,7 +23,7 @@
 
         <div class="box-header">
           <div class="pull-right">
-            <a href="#" class="btn btn-primary add_gazette_modal">Add New Falcon Gazette</a>
+            <a href="#" class="btn btn-primary add_gazette_modal">Upload a new Gazette</a>
           </div>
           <div class="cleafix"></div>
         </div>

@@ -1,11 +1,11 @@
 @extends('cpanel.layout.main')
-@section('title', 'Achivements')
+@section('title', 'Achievements')
 @section('content')
 
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Achivements
+      Achievements
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
@@ -24,7 +24,7 @@
         <div class="box-header">
           <!-- <h3 class="box-title">Hover Data Table</h3> -->
           <div class="pull-right">
-            <a href="#" class="btn btn-primary add_achivements_modal">Add New Achivements</a>
+            <a href="#" class="btn btn-primary add_achivements_modal">Add an Achievement</a>
           </div>
           <div class="cleafix"></div>
         </div>

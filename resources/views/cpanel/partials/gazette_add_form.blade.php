@@ -6,7 +6,7 @@
         <form id="form_add_gazette" name="form_add_gazette" method="post" enctype="multipart/form-data">
             <div class="modal-header box-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add New Falcon Gazette</h4>
+                <h4 class="modal-title">Falcon Gazette</h4>
             </div>
 
             <div class="modal-body">
@@ -25,7 +25,7 @@
                 
                 <div class="form-group">
                   <label for="gaz_title">Title <span class="text-red">*</span></label>
-                  <input type="text" class="form-control" id="gaz_title" name="gaz_title" value="" placeholder="Enter the Achivement Title Here">
+                  <input type="text" class="form-control" id="gaz_title" name="gaz_title" value="">
                   <div class="help-block has-error text-center" id="gaz_title-error"></div>
                 </div>
 

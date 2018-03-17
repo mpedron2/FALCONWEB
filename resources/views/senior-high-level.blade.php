@@ -96,15 +96,21 @@
                   <small class="text-muted">Posted on <span class="posting-date text-danger">{{ date('F d, Y', strtotime($articles->article_date)) }}</span></small>
                   <p class="m-t-1 m-b-4">{{ str_limit(strip_tags($articles->article_content), 200) }} <a href="{{ route('article.details', ['id' => $articles->article_id] ) }}" class="read-more text-danger text-uppercase">Read More</a></p>
                 </li>
-              @endforeach              
+              @endforeach
             </ul>
+
+              @if (count($related_articles) == 0)
+                <p class="text-center">There are no news and/or announcements as of this moment. Please check back again later.</p>
+              @endif
             @endif
 
             <div class="btn-group pull-left" role="group" aria-label="Pagination">
               {!! $related_articles->links() !!}
             </div>
 
-            <a href="news-and-events.php" class="btn btn-info btn-sm pull-right">View All</a>
+            @if (count($related_articles) != 0)
+              <a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+            @endif
 
           </div>
 

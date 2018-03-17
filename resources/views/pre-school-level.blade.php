@@ -84,14 +84,19 @@
                 </li>
               @endforeach              
             </ul>
+
+              @if (count($related_articles) == 0)
+                <p class="text-center">There are no news and/or announcements as of this moment. Please check back again later.</p>
+              @endif
             @endif
 
             <div class="btn-group pull-left" role="group" aria-label="Pagination">
               {!! $related_articles->links() !!}
             </div>
 
-            <a href="news-and-events.php" class="btn btn-info btn-sm pull-right">View All</a>
-
+            @if (count($related_articles) != 0)  
+              <a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+            @endif  
           </div>
 
         </div>

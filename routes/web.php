@@ -19,7 +19,7 @@ Route::group(['prefix' => '/control-panel'], function () {
 	// NEWS & EVENTS
 	Route::group(['prefix' => '/news-events'], function () {
 		Route::get('', 'cpanel\NewseventsController@index')->name('news-events');
-		Route::post('articles_add', 'cpanel\NewseventsController@articles_add')->name('news_events_add');
+		Route::get('news_events_add', 'cpanel\NewseventsController@news_events_add')->name('news_events_add');
 		Route::get('fetch_articles_data', 'cpanel\NewseventsController@fetch_articles_data')->name('fetch_articles_data');
 		Route::post('news_events_update', 'cpanel\NewseventsController@news_events_update')->name('news_events_update');
 		Route::get('news_events_delete', 'cpanel\NewseventsController@news_events_delete')->name('news_events_delete');

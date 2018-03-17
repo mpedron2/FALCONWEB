@@ -19,12 +19,12 @@ Route::group(['prefix' => '/control-panel'], function () {
 	// NEWS & EVENTS
 	Route::group(['prefix' => '/news-events'], function () {
 		Route::get('', 'cpanel\NewseventsController@index')->name('news-events');
+		Route::post('articles_add', 'cpanel\NewseventsController@articles_add')->name('news_events_add');
 		Route::get('fetch_articles_data', 'cpanel\NewseventsController@fetch_articles_data')->name('fetch_articles_data');
 		Route::post('news_events_update', 'cpanel\NewseventsController@news_events_update')->name('news_events_update');
 		Route::get('news_events_delete', 'cpanel\NewseventsController@news_events_delete')->name('news_events_delete');
 		Route::post('selected_gallery_save', 'cpanel\NewseventsController@selected_gallery_save')->name('selected_gallery_save');
-		Route::get('news_events_add', 'Cpanel\NewseventsController@news_events_add')->name('news_events_add');
-		Route::post('save_articles', 'Cpanel\NewseventsController@save_articles')->name('save_articles');
+		Route::post('save_articles', 'cpanel\NewseventsController@save_articles')->name('save_articles');
 	});
 
 
@@ -140,23 +140,41 @@ Route::group(['prefix' => '/academic-calendar'], function () {
 	
 });
 
+Route::group(['prefix' => '/news-and-announcements'], function () {
+	Route::get('', 'ArticlesController@news_announcements_data')->name('article.newsannoucements');
+	Route::get('/{type}', 'ArticlesController@articles_data_filter')->name('articles.data.filter');
+	
+});
+
+
+
+Route::group(['prefix' => '/facilities'], function () {
+	Route::get('', 'GalleriesController@facilities_gallery')->name('facilities.gallery');
+	Route::get('/{id}', 'GalleriesController@fetch_facilities_details')->name('facilities.details');
+});
+
+
+
+Route::group(['prefix' => '/gallery'], function () {
+	Route::get('', 'GalleriesController@gallery')->name('gallery.all');
+	Route::get('/{id}', 'GalleriesController@fetch_gallery_details')->name('gallery.details');
+});
+
+
+Route::group(['prefix' => '/article'], function () {
+	Route::get('/{id}', 'ArticlesController@fetch_article_data')->name('article.details');
+});
+
+
+Route::group(['prefix' => '/achievements'], function () {
+	Route::get('/filter', 'AchivementsController@achievements_filter')->name('achievements_filter');
+});
+
 
 Route::group(['prefix' => '/'], function () {
 	Route::get('', 'IndexPageController@index')->name('indexpage');
 
 	Route::get('{level}', 'SchoolLevelController@school_level')->name('school.level');
 	Route::post('{level}', 'SchoolLevelController@school_gallery_images')->name('school.level.gallery');
-
-	Route::get('/article/{id}', 'ArticlesController@fetch_article_data')->name('article.details');
-	Route::get('/news-and-announcements', 'ArticlesController@news_announcements_data')->name('article.newsannoucements');
-	Route::get('/news-and-announcements/{type}', 'ArticlesController@articles_data_filter')->name('articles.data.filter');
-	Route::get('/facilities', 'GalleriesController@facilities_gallery')->name('facilities.gallery');
-	Route::get('/facilities/{id}', 'GalleriesController@fetch_facilities_details')->name('facilities.details');
-
-	Route::get('/gallery', 'GalleriesController@gallery')->name('gallery.all');
-	Route::get('/gallery/{id}', 'GalleriesController@fetch_gallery_details')->name('gallery.details');
-
-
-	Route::get('/achievements/filter', 'AchivementsController@achievements_filter')->name('achievements_filter');
 	
 });

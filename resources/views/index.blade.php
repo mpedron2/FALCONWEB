@@ -188,7 +188,11 @@
 								@endforeach
 							</ul>
 
-							<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@if (count($upcoming_events) == 0)
+								<p>There are no upcoming events in the future. Please check back again later.</p>
+							@else
+								<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@endif
 
 						</div>
 					@endif
@@ -207,7 +211,11 @@
 								@endforeach
 							</ul>
 
-							<a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+							@if (count($latest_news) == 0)
+								<p>There are no news and/or announcements as of this moment. Please check back again later.</p>
+							@else
+								<a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+							@endif
 						</div>
 					@endif
 
@@ -231,8 +239,11 @@
 								@endforeach
 							</ul>
 
-							<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
-
+							@if (count($upcoming_events) == 0)
+								<p>There are no upcoming events in the future. Please check back again later.</p>
+							@else
+								<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@endif
 						</div>
 					@endif
 				</div>

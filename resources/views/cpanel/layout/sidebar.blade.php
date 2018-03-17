@@ -7,13 +7,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         
-        <li>
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          </a>
-        </li>
-
-
+      
         <li>
           <a href="{{ route('news-events') }}">
             <i class="fa fa-files-o"></i>
@@ -23,13 +17,13 @@
 
         <li>
           <a href="{{ route('achivements') }}">
-            <i class="fa fa-trophy"></i> <span>Achivements</span>
+            <i class="fa fa-trophy"></i> <span>Achievements</span>
           </a>
         </li>
 
         <li>
           <a href="{{ route('gazette') }}">
-            <i class="fa fa-trophy"></i> <span>Falcon Gazette</span>
+            <i class="fa fa-file-pdf-o"></i> <span>Falcon Gazette</span>
           </a>
         </li>
 
