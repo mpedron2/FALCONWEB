@@ -58,6 +58,7 @@ Route::group(['prefix' => '/control-panel'], function () {
 		Route::post('gallery_add_save', 'cpanel\GalleryController@gallery_add_save')->name('gallery_add_save');
 		Route::get('fetch_album_data', 'cpanel\GalleryController@fetch_album_data')->name('fetch_album_data');
 		Route::post('gallery_update_save', 'cpanel\GalleryController@gallery_update_save')->name('gallery_update_save');
+		Route::get('album_delete', 'cpanel\GalleryController@album_delete')->name('album_delete');
 		
 		Route::get('{id}/manage-gallery', 'cpanel\GalleryController@manage_gallery')->name('manage_gallery');
 		Route::post('', 'cpanel\GalleryController@post_gallery')->name('post_gallery');
@@ -76,6 +77,17 @@ Route::group(['prefix' => '/control-panel'], function () {
 		Route::get('export_inquiries', 'cpanel\InquiriesController@export_inquiries')->name('cms.iexport.inquiries');
 	});
 
+
+	// ACCOUNTS
+	Route::group(['prefix' => '/accounts'], function () {
+		Route::get('', 'cpanel\AccountsController@index')->name('cms.accounts');
+		Route::post('account_add_form', 'cpanel\AccountsController@account_add_form')->name('account.add.form');
+		Route::post('accounts_add_save', 'cpanel\AccountsController@accounts_add_save')->name('account.add.save');
+		Route::get('account_data_fetch', 'cpanel\AccountsController@account_data_fetch')->name('account.data.fetch');
+		Route::post('accounts_update_save', 'cpanel\AccountsController@accounts_update_save')->name('account.update.save');
+		Route::post('accounts_cpassword_save', 'cpanel\AccountsController@accounts_cpassword_save')->name('account.cpassword.save');\
+		Route::get('account_delete', 'cpanel\AccountsController@account_delete')->name('account.delete');
+	});
 
 	Route::get('/', 'Auth\LoginController@showLoginForm')->name('cpanel.login');
 	Route::post('/', 'Auth\LoginController@login');

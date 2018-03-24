@@ -41,7 +41,7 @@
 
 
         <li>
-          <a href="pages/calendar.html">
+          <a href="{{ route('cms.accounts') }}">
             <i class="fa fa-user"></i> <span>Accounts</span>
           </a>
         </li>

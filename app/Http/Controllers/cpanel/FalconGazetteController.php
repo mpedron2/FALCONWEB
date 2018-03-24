@@ -34,6 +34,7 @@ class FalconGazetteController extends Controller
 	        'gaz_title' => 'required',
 	        'gaz_date' => 'required|date',
 	        'gaz_pdf_filename' => 'required|max:2048|mimes:pdf',
+	        'gaz_image' => 'required|max:2048|mimes:jpg,jpeg',
 	        'gaz_status' => 'required',
 	    	],
 	    	[
@@ -43,6 +44,9 @@ class FalconGazetteController extends Controller
 	    	'gaz_pdf_filename.required' => 'The pdf file field is required.',
 	    	'gaz_pdf_filename.mimes' => 'The pdf filename must be a file of type: pdf.',
 	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 2MB of file size.',
+	    	'gaz_image.required' => 'The featured image field is required.',
+	    	'gaz_image.mimes' => 'The featured image must be a file of type: jpg.',
+	    	'gaz_image.max' => 'The featured image must maximum of 2MB of file size.',
 	    	'gaz_status.required' => 'The status field is required.'
 	    	]
 	    );
@@ -55,6 +59,9 @@ class FalconGazetteController extends Controller
 		        $input = $request->all();
 		        $input['gaz_pdf_filename'] = time().'.'.$request->gaz_pdf_filename->getClientOriginalExtension();
 		        $request->gaz_pdf_filename->move(public_path('uploads/falcon-gazette'), $input['gaz_pdf_filename']);
+
+		        $gaz_image = sha1(time()).'.'.$request->gaz_image->getClientOriginalExtension();
+                $request->file('gaz_image')->move(public_path('uploads/falcon-gazette'), $gaz_image);
 		       
  
 	        	// SAVE DETAILS
@@ -62,6 +69,7 @@ class FalconGazetteController extends Controller
 		    	$falcon_gazette->gaz_date = $request->gaz_date;
 		    	$falcon_gazette->gaz_status = $request->gaz_status;
 		    	$falcon_gazette->gaz_pdf_filename = $input['gaz_pdf_filename'];
+		    	$falcon_gazette->gaz_image = $gaz_image;
 		    	$falcon_gazette->save();
 		    	return response()->json(['code' => 1, 'messages' =>"Successfully Uploaded"]);
 		        

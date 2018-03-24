@@ -1,16 +1,16 @@
 @extends('cpanel.layout.main')
-@section('title', 'Gallery')
+@section('title', 'Accounts')
 @section('content')
 
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Gallery
+      Accounts
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Gallery</li>
+      <li class="active">Achivements</li>
     </ol>
   </section>
 
@@ -24,56 +24,59 @@
         <div class="box-header">
           <!-- <h3 class="box-title">Hover Data Table</h3> -->
           <div class="pull-right">
-            <a href="#" class="btn btn-primary add_album_modal">Create a New Album</a>
+            <a href="#" class="btn btn-primary add_account_modal">Add new account</a>
           </div>
           <div class="cleafix"></div>
         </div>
 
         <div class="box-body">
-          <table id="gallery-tbl" class="table table-bordered table-hover">
+          <table id="accounts-tbl" class="table table-bordered table-hover">
             <thead>
             <tr>
-              <th>Album Title</th>
-              <th>Date</th>
-              <th>Status</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
               <th>Action</th>
             </tr>
             </thead>
             <tbody>
             
             
-            @if($gallery)
-              @foreach($gallery as $albums)
+            @if($users)
+              @foreach($users as $user)
                 <tr>
                   <td>
-                    <a href="#" class="text-primary" data-id="{{ $albums->id }}">{{ $albums->gal_name }}</a>
+                    <a href="#" class="text-primary" data-id="{{ $user->id }}">{{ $user->name }}</a>
                   </td>
-                  <td>{{ $albums->gal_date }}</td>
+                  <td>{{ $user->email }}</td>
+                  <td class="text-capitalize">
+                    {{ $user->role_name }}
+                  </td>
                   <td>
-                    @if($albums->gal_status == 'Published')
-                      <span class="label bg-blue">Published</span>
-                    @elseif($albums->gal_status == 'Draft')
-                      <span class="label bg-yellow">Draft</span>
-                    @endif
-                  </td>
-                  <td> 
-                    <a href="#" class="btn btn-sm btn-primary update_album" data-id="{{ $albums->id }}">Update Album</a>  
-                    <a href="{{ route('manage_gallery', ['id' => $albums->id] ) }}" class="btn btn-sm btn-success" data-id="">Manage Gallery</a>  
-                    <a href="#" class="btn btn-sm btn-danger delete_button" data-id="{{ $albums->id }}">Delete</a>  
+                    @if($role_restriction->position != 3)
+                      @if(Auth::user()->id == 1) 
+                        <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>
+                      @else
+                        <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>  
+                        <a href="#" class="btn btn-danger delete_button" data-id="{{ $user->id }}">Delete</a>
+                      @endif
+                      
+                    @else
+                      @if(Auth::user()->id == $user->id)
+                        <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button> 
+                      @endif
+                    @endif  
                   </td>
                 </tr>
               @endforeach
             @endif
 
-             
-            
-            
             </tbody>
             <tfoot>
             <tr>
-              <th>Album Title</th>
-              <th>Date</th>
-              <th>Status</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
               <th>Action</th>
             </tr>
             </tfoot>
@@ -97,7 +100,7 @@
 
 <script>
   $(function () {
-    $('#gallery-tbl').DataTable({
+    $('#accounts-tbl').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
@@ -110,24 +113,24 @@
 
 <script type="text/javascript">
 
-  // ADD ALBUM MODAL
-  $('.add_album_modal').click(function() {
+  // ADD ACCOUNT
+  $('.add_account_modal').click(function() {
     show_form_modal({
       method : 'POST',
-      modal : '#album_add_modal',
-      route : "{{ route('album_add_modal') }}"
+      modal : '#account_add_modal',
+      route : "{{ route('account.add.form') }}"
     });
   });
 
 
-  // UPDATE ACHIVEMENTS 
-  $('.update_album').click(function() {
-    var album_id = $(this).data("id");
+  // UPDATE ACCOUNT 
+  $('.update_account').click(function() {
+    var usr_id = $(this).data("id");
     show_form_modal({
       method : 'GET',
-      modal : '#album_update_modal',
-      route : "{{ route('fetch_album_data') }}",
-      id : album_id
+      modal : '#account_update_modal',
+      route : "{{ route('account.data.fetch') }}",
+      id : usr_id
     });
   });
     
@@ -155,13 +158,13 @@
   } // END OF FUNCTION
 
 
-  // DELETE ALBUM
+  // DELETE ACCOUNT
   $(".delete_button").click(function() {
-    var album_id = $(this).data("id");
+    var usr_id = $(this).data("id");
     delete_form_modal({
       method : 'GET',
-      route : "{{ route('album_delete') }}",
-      id : album_id
+      route : "{{ route('account.delete') }}",
+      id : usr_id
     });
   });
 

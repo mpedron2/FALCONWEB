@@ -50,6 +50,14 @@
                   <div class="help-block has-error text-center" id="gaz_pdf_filename-error"></div>
                 </div>
 
+                <div class="form-group">
+                  <label for="gaz_image">Upload Featured Image</label>
+                  <div class="input-group w-100">
+                    <input type="file" name="gaz_image" id="gaz_image">
+                  </div>
+                  <div class="help-block has-error text-center" id="gaz_image-error"></div>
+                </div>
+
 
                 <div class="form-group">
                   <label>Status</label><br>
