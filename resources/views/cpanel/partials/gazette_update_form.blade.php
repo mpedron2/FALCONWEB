@@ -53,9 +53,24 @@
                 <div class="form-group">
                   <label for="gaz_pdf_filename">Update PDF</label>
                   <div class="input-group w-100">
+                    <p><i>file size must maximum of 3MB</i></p>
                     <input type="file" name="gaz_pdf_filename" id="gaz_pdf_filename">
                   </div>
                   <div class="help-block has-error text-center" id="gaz_pdf_filename-error"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="gaz_pdf_filename">View Preview Image</label>
+                  <a href="../uploads/falcon-gazette/{{ $falcon_gazette->gaz_image }}" class="w-100 m-y-2" target="_blank" style="display:block;">{{ $falcon_gazette->gaz_image }}</a>
+                </div>
+
+                <div class="form-group">
+                  <label for="gaz_image">Update Featured Image</label>
+                  <div class="input-group w-100">
+                    <p><i>Only jpg/jpeg format is accepted, file size must maximum of 2MB</i></p>
+                    <input type="file" name="gaz_image" id="gaz_image">
+                  </div>
+                  <div class="help-block has-error text-center" id="gaz_image-error"></div>
                 </div>
 
 

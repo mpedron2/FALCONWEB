@@ -249,9 +249,12 @@
 				</div>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-xs-12 col-sm-6 col-md-3 text-center">
 				<h4 class="bottom-bar">The Falcon Gazette</h4>
-				<a href="assets/uploads/falcon-gazette-sy-2015-2016.pdf" target="_blank"><img src="assets/temp/falcon-gazette-sy-2015-2016.jpg" alt="falcon-gazette-sy-2015-2016" title="Falcon Gazette SY 2015-2016" class="w-100"></a>
+				@foreach($falcon_gazette as $gaz)
+					<a href="{{  asset('uploads/falcon-gazette/'.$gaz->gaz_pdf_filename) }}" target="_blank"><img src="{{  asset('uploads/falcon-gazette/'.$gaz->gaz_image) }}" alt="{{ $gaz->gaz_title }}" title="{{ $gaz->gaz_title }}" class="w-100"></a>
+				@endforeach
+
 			</div>
 
 		</div>

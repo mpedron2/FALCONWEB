@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
+use App\falcon_gazette;
 
 class IndexPageController extends Controller
 {
@@ -23,6 +24,13 @@ class IndexPageController extends Controller
     		->limit(5)
     		->get();
 
-    	return view('index', compact('latest_news', 'upcoming_events'));
+        $falcon_gazette = DB::table('falcon_gazette')
+            ->where('gaz_status', 'Published')
+            ->orderBy('gaz_date', 'desc')
+            ->limit(1)
+            ->get();
+
+
+    	return view('index', compact('latest_news', 'upcoming_events', 'falcon_gazette'));
     }
 }
