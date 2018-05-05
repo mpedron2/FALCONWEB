@@ -33,7 +33,8 @@ class FalconGazetteController extends Controller
 			[
 	        'gaz_title' => 'required',
 	        'gaz_date' => 'required|date',
-	        'gaz_pdf_filename' => 'required|max:2048|mimes:pdf',
+	        'gaz_pdf_filename' => 'required|max:10240|mimes:pdf',
+	        'gaz_image' => 'required|max:2048|mimes:jpg,jpeg',
 	        'gaz_status' => 'required',
 	    	],
 	    	[
@@ -42,7 +43,10 @@ class FalconGazetteController extends Controller
 	    	'gaz_date.date'=>'The date field is not a valid date.',
 	    	'gaz_pdf_filename.required' => 'The pdf file field is required.',
 	    	'gaz_pdf_filename.mimes' => 'The pdf filename must be a file of type: pdf.',
-	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 2MB of file size.',
+	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 3MB of file size.',
+	    	'gaz_image.required' => 'The featured image field is required.',
+	    	'gaz_image.mimes' => 'The featured image must be a file of type: jpg.',
+	    	'gaz_image.max' => 'The featured image must maximum of 2MB of file size.',
 	    	'gaz_status.required' => 'The status field is required.'
 	    	]
 	    );
@@ -55,6 +59,9 @@ class FalconGazetteController extends Controller
 		        $input = $request->all();
 		        $input['gaz_pdf_filename'] = time().'.'.$request->gaz_pdf_filename->getClientOriginalExtension();
 		        $request->gaz_pdf_filename->move(public_path('uploads/falcon-gazette'), $input['gaz_pdf_filename']);
+
+		        $gaz_image = sha1(time()).'.'.$request->gaz_image->getClientOriginalExtension();
+                $request->file('gaz_image')->move(public_path('uploads/falcon-gazette'), $gaz_image);
 		       
  
 	        	// SAVE DETAILS
@@ -62,6 +69,7 @@ class FalconGazetteController extends Controller
 		    	$falcon_gazette->gaz_date = $request->gaz_date;
 		    	$falcon_gazette->gaz_status = $request->gaz_status;
 		    	$falcon_gazette->gaz_pdf_filename = $input['gaz_pdf_filename'];
+		    	$falcon_gazette->gaz_image = $gaz_image;
 		    	$falcon_gazette->save();
 		    	return response()->json(['code' => 1, 'messages' =>"Successfully Uploaded"]);
 		        
@@ -93,7 +101,8 @@ class FalconGazetteController extends Controller
 			[
 	        'gaz_title' => 'required',
 	        'gaz_date' => 'required|date',
-	        'gaz_pdf_filename' => 'max:2048',
+	        'gaz_image' => 'max:2048|mimes:jpg,jpeg',
+	        'gaz_pdf_filename' => 'max:10240',
 	        'gaz_status' => 'required',
 	    	],
 	    	[
@@ -102,7 +111,10 @@ class FalconGazetteController extends Controller
 	    	'gaz_date.date'=>'The date field is not a valid date.',
 	    	'gaz_pdf_filename.required' => 'The pdf file field is required.',
 	    	'gaz_pdf_filename.mimes' => 'The pdf filename must be a file of type: pdf.',
-	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 2MB of file size.',
+	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 10MB of file size.',
+	    	'gaz_status.required' => 'The status field is required.',
+	    	'gaz_image.mimes' => 'The featured image must be a file of type: jpg.',
+	    	'gaz_image.max' => 'The featured image must maximum of 2MB of file size.',
 	    	'gaz_status.required' => 'The status field is required.'
 	    	]
 	    );
@@ -130,6 +142,25 @@ class FalconGazetteController extends Controller
 			    }
 			} 
 
+			if(!empty($request->gaz_image)) {
+		    	if($request->gaz_image->getClientOriginalExtension() == "jpg" || $request->gaz_image->getClientOriginalExtension() == "jpeg") {
+			        //DELETE EXISTING FILE
+			        $old_pdf_path='uploads/falcon-gazette/'.$falcon_gazette->gaz_image;
+			        if(file_exists($old_pdf_path)){
+				        @unlink($old_pdf_path);
+				    }
+
+			        // UPLOAD JPG FILE
+			        $input = $request->all();
+			        $input['gaz_image'] = sha1(time()).'.'.$request->gaz_image->getClientOriginalExtension();
+			        $request->gaz_image->move(public_path('uploads/falcon-gazette'), $input['gaz_image']);
+			      
+			      	$falcon_gazette->gaz_image = $input['gaz_image']; 
+			    } else {
+			    	return response()->json(['code' => 2, 'messages' =>"Only JPG/JPEG are accepted"]);
+			    }
+			} 
+
 		    $falcon_gazette->gaz_title = $request->gaz_title;
 	    	$falcon_gazette->gaz_date = $request->gaz_date;
 	    	$falcon_gazette->gaz_status = $request->gaz_status;
@@ -154,6 +185,11 @@ class FalconGazetteController extends Controller
         $pdf_path='uploads/falcon-gazette/'.$falcon_gazette->gaz_pdf_filename;
         if(file_exists($pdf_path)){
 	        @unlink($pdf_path);
+	    }
+
+	    $img_path='uploads/falcon-gazette/'.$falcon_gazette->gaz_image;
+        if(file_exists($img_path)){
+	        @unlink($img_path);
 	    }
 
         $falcon_gazette->delete();

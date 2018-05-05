@@ -6,7 +6,7 @@
         <form id="form_add_gazette" name="form_add_gazette" method="post" enctype="multipart/form-data">
             <div class="modal-header box-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add New Falcon Gazette</h4>
+                <h4 class="modal-title">Falcon Gazette</h4>
             </div>
 
             <div class="modal-body">
@@ -25,7 +25,7 @@
                 
                 <div class="form-group">
                   <label for="gaz_title">Title <span class="text-red">*</span></label>
-                  <input type="text" class="form-control" id="gaz_title" name="gaz_title" value="" placeholder="Enter the Achivement Title Here">
+                  <input type="text" class="form-control" id="gaz_title" name="gaz_title" value="">
                   <div class="help-block has-error text-center" id="gaz_title-error"></div>
                 </div>
 
@@ -45,9 +45,19 @@
                 <div class="form-group">
                   <label for="gaz_pdf_filename">Upload PDF</label>
                   <div class="input-group w-100">
+                    <p><i>file size must maximum of 3MB</i></p>
                     <input type="file" name="gaz_pdf_filename" id="gaz_pdf_filename">
                   </div>
                   <div class="help-block has-error text-center" id="gaz_pdf_filename-error"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="gaz_image">Upload Preview Image</label>
+                  <div class="input-group w-100">
+                    <p><i>Only jpg/jpeg format is accepted, file size must maximum of 2MB</i></p>
+                    <input type="file" name="gaz_image" id="gaz_image">
+                  </div>
+                  <div class="help-block has-error text-center" id="gaz_image-error"></div>
                 </div>
 
 
@@ -119,6 +129,8 @@
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
 
+                $('#gazette_add_modal').scrollTop(0);
+
             } else if(retData.code == 2) {
               $('#gaette_validation_error ul').html("");
               event_error_logs = "<li>"+retData.messages+"</li>";
@@ -127,6 +139,8 @@
               for(var err in retData.messages) {
                 $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
               }
+
+              $('#gazette_add_modal').scrollTop(0);
             } else {
                 location.reload();
             }

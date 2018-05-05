@@ -173,22 +173,31 @@
 							<h4 class="bottom-bar">Upcoming Events</h4>
 
 							<ul class="list-unstyled list-events">
+								<?php $curr_date = date('Y-m-d') ?>
 								@foreach($upcoming_events as $events)
-								    <li>
-								    	<div class="posting-date pull-left text-center">
-									    	<span class="h4">{{ date('d', strtotime($events->article_eventdate1)) }}</span>
-									    	{{ date('M', strtotime($events->article_eventdate1)) }}
-								    	</div>
+								    @if($events->article_eventdate1 >= $curr_date )
+									    <li>
+									    	<div class="posting-date pull-left text-center">
+										    	<span class="h4">{{ date('d', strtotime($events->article_eventdate1)) }}</span>
+										    	{{ date('M', strtotime($events->article_eventdate1)) }}
+									    	</div>
 
-										<div class="event-details">
-											<h5 class="event-title">{{ $events->article_title }}</h5>
-											<p class="event-desc">{{ str_limit(strip_tags($events->article_content), 40) }}</p>
-										</div>
-								    </li>
+											<div class="event-details">
+												<h5 class="event-title">{{ $events->article_title }}</h5>
+												<p class="event-desc">{{ str_limit(strip_tags($events->article_content), 40) }}</p>
+											</div>
+									    </li>
+									@else
+										<p>There are no upcoming events in the future. Please check back again later.</p>
+									@endif
 								@endforeach
 							</ul>
 
-							<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@if (count($upcoming_events) == 0)
+								<p>There are no upcoming events in the future. Please check back again later.</p>
+							@else
+								<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@endif
 
 						</div>
 					@endif
@@ -207,7 +216,11 @@
 								@endforeach
 							</ul>
 
-							<a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+							@if (count($latest_news) == 0)
+								<p>There are no news and/or announcements as of this moment. Please check back again later.</p>
+							@else
+								<a href="{{ route('article.newsannoucements') }}" class="btn btn-info btn-sm pull-right">View All</a>
+							@endif
 						</div>
 					@endif
 
@@ -231,16 +244,22 @@
 								@endforeach
 							</ul>
 
-							<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
-
+							@if (count($upcoming_events) == 0)
+								<p>There are no upcoming events in the future. Please check back again later.</p>
+							@else
+								<a href="{{ route('academic.calendar') }}" class="btn btn-info btn-sm pull-right">See All Events</a>
+							@endif
 						</div>
 					@endif
 				</div>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-xs-12 col-sm-6 col-md-3 text-center">
 				<h4 class="bottom-bar">The Falcon Gazette</h4>
-				<a href="assets/uploads/falcon-gazette-sy-2015-2016.pdf" target="_blank"><img src="assets/temp/falcon-gazette-sy-2015-2016.jpg" alt="falcon-gazette-sy-2015-2016" title="Falcon Gazette SY 2015-2016" class="w-100"></a>
+				@foreach($falcon_gazette as $gaz)
+					<a href="{{  asset('uploads/falcon-gazette/'.$gaz->gaz_pdf_filename) }}" target="_blank"><img src="{{  asset('uploads/falcon-gazette/'.$gaz->gaz_image) }}" alt="{{ $gaz->gaz_title }}" title="{{ $gaz->gaz_title }}" class="w-100"></a>
+				@endforeach
+
 			</div>
 
 		</div>

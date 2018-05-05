@@ -118,7 +118,7 @@
                 <div class="form-group">
                   <label for="article_content">Select / Check Gallery Album for this Section</label>
                   <div class="w-100 m-y-3">
-                    <a class="btn btn-warning" data-toggle="modal" href="#achivements_gallery_modal">Show Albums</a>
+                    <a id="show_albums_btn" class="btn btn-warning">Show Albums</a>
                   </div>
                 </div>
 
@@ -167,7 +167,7 @@
                   @if($gallerys)
                     @foreach($gallerys as $gallery)
                       <?php
-                        if(in_array($gallery->id, $achivements_images_data)) {
+                        if(in_array($gallery->gallery_id, $achivements_images_data)) {
                           $checkbox_status = 'checked';
                         } else {
                           $checkbox_status = '';
@@ -194,7 +194,7 @@
           </div>
           <div class="modal-footer">
               <button type="submit" class="btn btn-primary btn-flat">Select</button>
-              <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+              <button id="close_achievement_gal" type="button" class="btn btn-default btn-flat">Close</button>
           </div>
       </form>
       </div>
@@ -260,6 +260,8 @@
                 for(var err in retData.messages) {
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
+
+                $('#achivements_update_modal').scrollTop(0);
                 
             } else {
                 location.reload();
@@ -281,9 +283,34 @@
           data: form_data,
           success : function (retData) {
             var event_error_logs;
+
             $('#achivements_gallery_modal').modal('hide');
+            setTimeout(function() {
+                $('body').addClass('modal-open');
+            }, 400);
+            $('#achivements_update_modal').modal('show');
+                    
           }
       })
+  });
+
+
+
+  $("#show_albums_btn").click(function() {
+    $('.modal.in').modal('hide')
+    setTimeout(function() {
+        $('body').addClass('modal-open');
+    }, 400);
+    $('#achivements_gallery_modal').modal('toggle');
+  });
+
+
+  $("#close_achievement_gal").click(function() {
+    $('#achivements_gallery_modal').modal('hide');
+    setTimeout(function() {
+        $('body').addClass('modal-open');
+    }, 400);
+    $('#achivements_update_modal').modal('show');
   });
 
 </script>

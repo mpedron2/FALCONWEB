@@ -24,7 +24,7 @@
         <div class="box-header">
           <!-- <h3 class="box-title">Hover Data Table</h3> -->
           <div class="pull-right">
-            <a href="#" class="btn btn-primary add_album_modal">Add New Album</a>
+            <a href="#" class="btn btn-primary add_album_modal">Create a New Album</a>
           </div>
           <div class="cleafix"></div>
         </div>
@@ -155,13 +155,13 @@
   } // END OF FUNCTION
 
 
-  // DELETE ACHIVEMENTS
-  /*$(".delete_button").click(function() {
-    var ach_id = $(this).data("id");
+  // DELETE ALBUM
+  $(".delete_button").click(function() {
+    var album_id = $(this).data("id");
     delete_form_modal({
       method : 'GET',
-      route : "{{ route('achivements_delete') }}",
-      id : ach_id
+      route : "{{ route('album_delete') }}",
+      id : album_id
     });
   });
 
@@ -183,7 +183,7 @@
           }
       });
     });
-  } // END OF FUNCTION*/
+  } // END OF FUNCTION
 
 
  

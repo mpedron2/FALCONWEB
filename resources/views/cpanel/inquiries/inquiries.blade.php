@@ -1,5 +1,5 @@
 @extends('cpanel.layout.main')
-@section('title', 'Achivements')
+@section('title', 'Inquiries')
 @section('content')
 
   <!-- Content Header (Page header) -->

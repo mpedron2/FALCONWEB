@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <span class="logo-mini"><b>FS</b>CMS</span>
-      <span class="logo-lg"><b>Falcon</b>CMS</span>
+      <span class="logo-lg"><b>Falcon School </b>CMS</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">

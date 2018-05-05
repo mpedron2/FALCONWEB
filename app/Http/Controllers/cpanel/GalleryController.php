@@ -36,6 +36,30 @@ class GalleryController extends Controller
     }
 
 
+    public function album_delete(Request $request) {
+
+        // DELETE GALLERY LEVEL
+        $gallery_album_delete = DB::table('gallery')->where('id', '=', $request->id)->delete();
+        $gallery_type_delete = DB::table('gallery_type')->where('gallery_id', '=', $request->id)->delete();
+        $gallery_level_delete = DB::table('gallery_level')->where('gallery_id', '=', $request->id)->delete();
+        $gallery_images = GalleryImages::where('gal_id_fk', $request->id)->get();
+
+        if($gallery_images) {
+            foreach($gallery_images as $gal_img) {
+                $file = FileUploads::find($gal_img->img_id_fk);
+                $images_path='uploads/gallery/'.$file->file_filename;
+                if(file_exists($images_path)){
+                    @unlink($images_path);
+                    $file_delete = DB::table('file_uploads')->where('id', '=', $gal_img->img_id_fk)->delete();
+                }
+            }
+        }
+
+        $gallery_images_delete = DB::table('gallery_images')->where('gal_id_fk', '=', $request->id)->delete();
+        return back();
+
+    }
+
     public function fetch_album_data(Request $request) {
         $levels = school_levels::all();
         $gallery = Gallery::find($request->id);

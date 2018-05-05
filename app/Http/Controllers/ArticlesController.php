@@ -15,11 +15,22 @@ class ArticlesController extends Controller
 
     	$related_articles = DB::table('news_events')
     		->where('article_type', $article_details->article_type)
+            ->where('article_status', 'Published')
     		->orderBy('article_date', 'desc')
     		->limit(3)
     		->get();
 
-    	return view('article-details', compact('article_details', 'related_articles'));
+        $related_gallery = DB::table('article_images')
+            ->select('article_images.gallery_id', 'article_images.article_id_fk', 'gallery.*', 'gallery_images.img_id_fk', 'file_uploads.file_title', 'file_uploads.file_filename')
+            ->leftJoin('gallery', 'article_images.gallery_id', '=', 'gallery.id')
+            ->leftJoin('gallery_images', 'gallery.id', '=', 'gallery_images.gal_id_fk')
+            ->leftJoin('file_uploads', 'gallery_images.img_id_fk', '=', 'file_uploads.id')
+            ->where('article_images.article_id_fk', '=', $request->id)
+            ->where('gallery.gal_status', '=', 'Published')
+            ->groupBy('gallery.id')
+            ->get();
+
+    	return view('article-details', compact('article_details', 'related_articles', 'related_gallery'));
     }
 
 
@@ -27,11 +38,13 @@ class ArticlesController extends Controller
         $news_announcements = DB::table('news_events')
             ->where('article_type', 'News')
             ->orWhere('article_type', 'Annoucements')
+            ->where('article_status', 'Published')
             ->orderBy('article_date', 'desc')
             ->paginate(5);
 
         $upcoming_events = DB::table('news_events')
             ->where('article_type', 'Events')
+            ->where('article_status', 'Published')
             ->orderBy('article_eventdate1', 'desc')
             ->limit(3)
             ->get();
@@ -42,10 +55,20 @@ class ArticlesController extends Controller
     public function articles_data_filter(Request $request) {
         $news_announcements = DB::table('news_events')
             ->where('article_type', $request->type)
+            ->where('article_status', 'Published')
             ->orderBy('article_date', 'desc')
             ->paginate(5);
 
-        return view('article-news-announcements', compact('news_announcements'));
+            $upcoming_events = DB::table('news_events')
+            ->where('article_type', 'Events')
+             ->where('article_status', 'Published')
+            ->orderBy('article_eventdate1', 'desc')
+            ->limit(3)
+            ->get();
+
+        $type = $request->type;
+
+        return view('article-news-announcements', compact('news_announcements', 'upcoming_events', 'type'));
     }
 
 

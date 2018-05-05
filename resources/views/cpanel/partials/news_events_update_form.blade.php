@@ -156,7 +156,7 @@
                 <div class="form-group">
                   <label for="article_content">Select / Check Gallery Album for this Article</label>
                   <div class="w-100 m-y-3">
-                    <a class="btn btn-warning" data-toggle="modal" href="#article_gallery_modal">Show Albums</a>
+                    <a id="show_albums_btn" class="btn btn-warning">Show Albums</a>
                   </div>
                 </div>
 
@@ -201,6 +201,8 @@
 
                   <input type="hidden" name="article_id_fk" id="article_id_fk" value="{{ $article_details->id }}">
                   
+
+
                   @if($gallerys)
                     @foreach($gallerys as $gallery)
                       <?php
@@ -231,7 +233,7 @@
           </div>
           <div class="modal-footer">
               <button type="submit" class="btn btn-primary btn-flat">Select</button>
-              <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+              <button id="close_article_gal_modal" type="button" class="btn btn-default btn-flat">Close</button>
           </div>
       </form>
       </div>
@@ -306,6 +308,7 @@
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
 
+                $('#article_update_modal').scrollTop(0);
                 
             } else {
                 location.reload();
@@ -328,9 +331,34 @@
           success : function (retData) {
             var event_error_logs;
             $('#article_gallery_modal').modal('hide');
+            setTimeout(function() {
+                $('body').addClass('modal-open');
+            }, 400);
+            $('#article_update_modal').modal('show');
+            
+
           }
       })
   });
+
+
+  $("#show_albums_btn").click(function() {
+    $('.modal.in').modal('hide')
+    setTimeout(function() {
+        $('body').addClass('modal-open');
+    }, 400);
+    $('#article_gallery_modal').modal('toggle');
+  });
+
+
+  $("#close_article_gal_modal").click(function() {
+    $('#article_gallery_modal').modal('hide');
+    setTimeout(function() {
+        $('body').addClass('modal-open');
+    }, 400);
+    $('#article_update_modal').modal('show');
+  });
+ 
 
 
 
