@@ -57,8 +57,14 @@
                       @if(Auth::user()->id == 1) 
                         <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>
                       @else
-                        <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>  
-                        <a href="#" class="btn btn-danger delete_button" data-id="{{ $user->id }}">Delete</a>
+
+                        @if($user->role_name == 'superadmin')
+                          <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>
+                        @else
+                          <button class="btn btn-success update_account" data-id="{{ $user->id }}">Update</button>
+                          <a href="#" class="btn btn-danger delete_button" data-id="{{ $user->id }}">Delete</a>
+                        @endif
+
                       @endif
                       
                     @else

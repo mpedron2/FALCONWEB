@@ -113,6 +113,7 @@
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
                 
+                $('#account_add_modal').scrollTop(0);
             } else {
               location.reload();
             }

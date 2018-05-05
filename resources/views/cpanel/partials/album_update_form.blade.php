@@ -85,7 +85,7 @@
 
                       <div class="m-b-2">
                         <input type="checkbox" class="gallery_type" name="gallery_type[]" value="achivements" <?php if(in_array('achivements', $checked_data_type)) { echo 'checked'; } ?>>
-                        <span class="m-l-2">Achivements Album</span>
+                        <span class="m-l-2">Achievements Album</span>
                       </div>
 
                       <div class="m-b-2">
@@ -210,6 +210,8 @@
                 for(var err in retData.messages) {
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
+
+                $('#album_update_modal').scrollTop(0);
                 
             } else {
                 location.reload();

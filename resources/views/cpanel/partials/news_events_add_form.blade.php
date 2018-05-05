@@ -196,6 +196,8 @@
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
 
+                $('#article_add_modal').scrollTop(0);
+
                 
             } else {
                 location.reload();

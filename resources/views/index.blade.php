@@ -173,18 +173,23 @@
 							<h4 class="bottom-bar">Upcoming Events</h4>
 
 							<ul class="list-unstyled list-events">
+								<?php $curr_date = date('Y-m-d') ?>
 								@foreach($upcoming_events as $events)
-								    <li>
-								    	<div class="posting-date pull-left text-center">
-									    	<span class="h4">{{ date('d', strtotime($events->article_eventdate1)) }}</span>
-									    	{{ date('M', strtotime($events->article_eventdate1)) }}
-								    	</div>
+								    @if($events->article_eventdate1 >= $curr_date )
+									    <li>
+									    	<div class="posting-date pull-left text-center">
+										    	<span class="h4">{{ date('d', strtotime($events->article_eventdate1)) }}</span>
+										    	{{ date('M', strtotime($events->article_eventdate1)) }}
+									    	</div>
 
-										<div class="event-details">
-											<h5 class="event-title">{{ $events->article_title }}</h5>
-											<p class="event-desc">{{ str_limit(strip_tags($events->article_content), 40) }}</p>
-										</div>
-								    </li>
+											<div class="event-details">
+												<h5 class="event-title">{{ $events->article_title }}</h5>
+												<p class="event-desc">{{ str_limit(strip_tags($events->article_content), 40) }}</p>
+											</div>
+									    </li>
+									@else
+										<p>There are no upcoming events in the future. Please check back again later.</p>
+									@endif
 								@endforeach
 							</ul>
 

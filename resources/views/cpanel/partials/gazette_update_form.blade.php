@@ -142,6 +142,8 @@
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
 
+                $('#gazette_update_modal').scrollTop(0);
+
             } else if(retData.code == 2) {
               $('#gaette_validation_error ul').html("");
               event_error_logs = "<li>"+retData.messages+"</li>";
@@ -150,6 +152,8 @@
               for(var err in retData.messages) {
                 $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
               }
+
+              $('#gazette_update_modal').scrollTop(0);
 
             } else {
                 location.reload();

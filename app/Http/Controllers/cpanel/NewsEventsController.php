@@ -134,6 +134,7 @@ class NewseventsController extends Controller
         }
 
         $gallerys = DB::table('gallery')
+        ->select('gallery.*', 'gallery_type.gallery_type', 'gallery_type.gallery_id')
         ->join('gallery_type', 'gallery.id', '=', 'gallery_type.gallery_id')
         ->where('gallery_type.gallery_type', '=', 'articles')
         ->where('gallery.gal_status', '=', 'Published')

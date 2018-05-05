@@ -178,6 +178,8 @@
                 for(var err in retData.messages) {
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
+
+                $('#account_update_modal').scrollTop(0);
                 
             } else {
               location.reload();
@@ -205,6 +207,8 @@
                 for(var err in retData.messages) {
                   $('#'+err+'-error').html('<code>'+ retData.messages[err] +'</code>');
                 }
+
+                $('#cpassword_modal').scrollTop(0);
                 
             } else {
               $('#cpassword_modal').modal('hide');

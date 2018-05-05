@@ -101,7 +101,7 @@ class FalconGazetteController extends Controller
 			[
 	        'gaz_title' => 'required',
 	        'gaz_date' => 'required|date',
-	        'gaz_image' => 'required|max:2048|mimes:jpg,jpeg',
+	        'gaz_image' => 'max:2048|mimes:jpg,jpeg',
 	        'gaz_pdf_filename' => 'max:10240',
 	        'gaz_status' => 'required',
 	    	],
@@ -113,7 +113,6 @@ class FalconGazetteController extends Controller
 	    	'gaz_pdf_filename.mimes' => 'The pdf filename must be a file of type: pdf.',
 	    	'gaz_pdf_filename.max' => 'The pdf file must maximum of 10MB of file size.',
 	    	'gaz_status.required' => 'The status field is required.',
-	    	'gaz_image.required' => 'The featured image field is required.',
 	    	'gaz_image.mimes' => 'The featured image must be a file of type: jpg.',
 	    	'gaz_image.max' => 'The featured image must maximum of 2MB of file size.',
 	    	'gaz_status.required' => 'The status field is required.'
