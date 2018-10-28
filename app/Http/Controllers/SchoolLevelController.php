@@ -70,7 +70,7 @@ class SchoolLevelController extends Controller
 	    $items_dataset = array();
 	    foreach ($gallery_images as $images) {
 	    	$items_dataset[] = [
-	    		'src' => 'uploads/gallery/'.$images->file_filename,
+	    		'src' => asset('uploads/gallery/'.$images->file_filename),
 	    		'w' => $images->file_width,
 	    		'h' => $images->file_height,
 	    		'title' => $images->file_title
